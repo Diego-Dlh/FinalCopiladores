@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interprete</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='assets/upwork-logo-24.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/body.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/menu.css') }}"
+    />
+  </head>
+  <body>
+    <div class="menu">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <p id="interpreter">Interpreter</p>
+          <p id="web" class="pila">web</p></a
+        >
+        <div class="nav-links">
+          <ul>
+            <li id="languages" class="dropdown">
+              <a href="#">Languages</a>
+              <div id="language-dropdown" class="language-dropdown">
+                <ul class="language-list">
+                  <li><a href="#" data-lang="en">English</a></li>
+                  <li><a href="#" data-lang="es">Spanish</a></li>
+                  <li><a href="#" data-lang="jp">Japanese</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="text_input">
+        <div class="write">
+          <textarea id="Texto" rows="5"> </textarea>
+        </div>
+        <div class="console">
+          <script src="{{ url_for('static', filename='scripts/console.js') }}"></script>
+        </div>
+        <div class="buttons">
+          <div class="buttondiv">
+            <button type="button" id="send" class="button">
+              Send
+            </button>
+          </div>
+          <div class="buttondiv">
+            <button type="button" id="validate" class="button" onclick="validateCode()">
+              Validate
+            </button>
+          </div>
+          <div class="buttondiv">
+            <button type="button" id="execute" class="button" onclick="executeCode()">
+              Execute
+            </button>
+          </div>
+        
+        </div>
+      </div>
+      <div class="text_example">
+        <h3>SINTAXIS DEL LENGUAJE</h3><br>
+        <p style="color: green;">//Imprimir:</p>
+        <p>aver("mensaje"); // se esta imprimiendo un mensaje</p>
+        <p>aver(a); // se esta imprimiendo una variable</p><br>
+        <p style="color: green;">//Declarar variable de tipo numerica:</p>
+        <p>numerito a;</p>
+        <p>numerito b;</p><br>
+        <p style="color: green;">//Asignar valor a variable numerica:</p>
+        <p>a = 1;</p>
+        <p>b = 3;</p><br>
+        <p style="color: green;">//Declarar variable de tipo booleano:</p>
+        <p>bool a;</p><br>
+        <p style="color: green;">//Condicionales:</p>
+        <p>chi(a > b){<br>
+          &nbsp;aver("a es mayor que b");<br>
+          }chinop{<br>
+          &nbsp;chi(a == b){<br>
+            &nbsp;&nbsp;aver("a y b son iguales");<br>
+            &nbsp;}chinop{<br>
+            &nbsp;&nbsp;aver("b es mayor que a");<br>
+            &nbsp;}<br>
+          }</p><br>
+          <p style="color: green;">//Ciclo for:</p>
+          <p>aver("Hola, esto es un ejemplo de ciclo for ");<br>
+            aver("Comenzando el ciclo...");<br>
+            
+            untuk i=0 hasta 3 { <br>
+              &nbsp;aver("Iteracion numero " & i);<br>
+              &nbsp;untuk j=0 hasta 3 { <br>
+                &nbsp;&nbsp;aver("Mensaje " & j+1); <br>
+                &nbsp;} <br>
+            }</p><br>
+          <p style="color: green;">//Ciclo While:</p>
+          <p>
+            numerito i; <br>
+            i = -5; <br>
+            mentre(i < 1){ <br> 
+            &nbsp;i = i+1; <br>
+            &nbsp;aver("hola mundo");<br>
+          }</p><br>
+          <p style="color: green;">//Ciclo doWhile:</p>
+          <p>aver("Ejemplo de do while");<br>
+            numerito x;<br>
+            x = 10;<br>
+            acto {<br>
+              &nbsp;aver(x);<br>
+              &nbsp;x = x + 1;<br>
+            } mentre(x < 15);
+          </p><br>
+          <p style="color: green;">//Funciones:</p>
+          <p>funcao mensaje(){<br>
+            &nbsp;aver("Prueba de funciones");<br>
+          }<br><br>
+          funcao suma(a, b){<br>
+            &nbsp;numerito resultado;<br>
+            &nbsp;resultado = a + b;<br>
+            &nbsp;chi(resultado>10){<br>
+            &nbsp;&nbsp;aver("El resultado es mayor a 10");<br>
+            &nbsp;}chinop{<br>
+            &nbsp;&nbsp;aver("El resultado de la suma es: ");<br>
+            &nbsp;&nbsp;aver(resultado);<br>
+            &nbsp;}<br>
+          }<br><br>
+          funcao multiplicacion(a, b){<br>
+            &nbsp;numerito resultado;<br>
+            &nbsp;resultado = a * b;<br>
+            &nbsp;aver("El resultado de la multiplicacion es: ");<br>
+            &nbsp;aver(resultado);<br>
+          }<br>
+          </p><br>
+          <p style="color: green;">//Llamado a funciones:</p>
+          <p>mensaje();<br>
+            suma(4, 5);<br>
+            multiplicacion(10, 5);</p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/translations.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/speech.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/send_data.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "title": "Intérprete web",
+    "languages": "Idiomas",
+    "languages-option": {
+        "en": "Inglés",
+        "es": "Español",
+        "jp": "Japonés"
+    },
+    "interpreter": "Intérprete",
+    "web": "Web",
+    "execute": "Ejecutar",
+    "validate": "Validar",
+    "send": "Enviar"
+}

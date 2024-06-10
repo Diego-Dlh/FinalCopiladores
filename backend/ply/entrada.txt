@@ -1,0 +1,7 @@
+numerito a;
+numerito b;
+a=10;
+b=5;
+si(a>b){
+  aver("hola");
+}
